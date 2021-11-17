@@ -277,7 +277,7 @@ func packagesExecWorker(userInput string) <-chan error {
 
 		bus.Publish(partybus.Event{
 			Type:  event.PresenterReady,
-			Value: f.Presenter(sbomResult),
+			Value: f.Presenter(sbomResult, appConfig),
 		})
 	}()
 	return errs
